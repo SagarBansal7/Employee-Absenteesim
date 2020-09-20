@@ -1,4 +1,4 @@
-# Employee Absentieesim #
+# Employee Absenteesim #
 ## Graduate Course: Intermediate Statistical Modeling for Business
 This was an individual project from a course on Logistic Regression (a supervised machine learning technique for statistical modeling). Below is the prompt from the client:
 
