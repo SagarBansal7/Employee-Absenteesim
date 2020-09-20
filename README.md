@@ -14,7 +14,7 @@ A good estimation of accuracy for prediction based on the data will be 62.4%. Al
 
 Besides this, client should keep in mind that response may be affected by the weather and season of that quarter. The tendency to take leave may have a seasonal pattern. Also, data was highly imbalanced which could give a false sense of accuracy. Finally, additional features such as Married or not and Reason for leave may have added more to the analysis. 
 
-### Statistical analysis:
+### Statistical Analysis
 
 When I summarized the given data, I found that the average value of Salary and Age variables in the given data are roughly 47519.64 USD and 35, respectively (see Table 1 to 4). I made a bar graph on our response variable i.e., tookLeave (see Figure 1). I found that 20% of the employees took a leave which is significantly high considering the short period length i.e., three months. In addition, the box plot of age categorized by tookLeave didn’t show any considerable difference between the two categories (see Figure 3). Although the minimum and maximum age is different for both categories, the mean and median are roughly same. Hence, I decided to not include age as a predictor in our model. 
 
