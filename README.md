@@ -8,20 +8,56 @@ This was an individual project from a course on Logistic Regression (a supervise
 
 ### Analysis Summary
 
-We discovered that Salary and whether a raise was given or not to the employee are crucial in identifying employees who are most likely to use a leave day. To a great surprise, employment status and age does not significantly affect the likelihood of the response. It is in contrast to the general belief that part-time employees are more likely to abuse leave policy as they are less loyal/dependent on the company. 
+I discovered that Salary and whether a raise was given or not to the employee are crucial in identifying employees who are most likely to use a leave day. To a great surprise, employment status and age does not significantly affect the likelihood of the response. It is in contrast to the general belief that part-time employees are more likely to abuse leave policy as they are less loyal/dependent on the company. 
 
-A good estimation of accuracy for prediction based on the data will be 62.4%. Although we can modify the model to reach up to 80% accuracy, it would drastically reduce the percentage of accurately identified employees who actually will use the leave policy. Yes, we can tune the model so that at most 10% of the people who don't use the leave policy are incorrectly predicted by the model to use the leave policy. In that case, the people that will be identified to use policy who actually will use the leave policy in three months will range from 0.0% to 17.5%.
+A good estimation of accuracy for prediction based on the data will be 62.4%. Although I can modify the model to reach up to 80% accuracy, it would drastically reduce the percentage of accurately identified employees who actually will use the leave policy. Yes, I can tune the model so that at most 10% of the people who don't use the leave policy are incorrectly predicted by the model to use the leave policy. In that case, the people that will be identified to use policy who actually will use the leave policy in three months will range from 0.0% to 17.5%.
 
-Besides this, client should keep in mind that response may be affected by the weather and season of that quarter. The tendency to take leave may have a seasonal pattern. Also, data was highly imbalanced which could give us a false sense of accuracy. Finally, additional features such as Married or not and Reason for leave may have added more to the analysis. 
+Besides this, client should keep in mind that response may be affected by the weather and season of that quarter. The tendency to take leave may have a seasonal pattern. Also, data was highly imbalanced which could give a false sense of accuracy. Finally, additional features such as Married or not and Reason for leave may have added more to the analysis. 
 
 ### Statistical analysis:
 
-When we summarized the given data, we found that the average value of Salary and Age variables in the given data are roughly 47519.64 USD and 35, respectively. We made a bar graph on our response variable i.e., tookLeave and found that 20% of the employees took a leave which is significantly high considering the short period length i.e., three months. In addition, the box plot of age categorized by tookLeave didn’t show any considerable difference between the two categories. Although the minimum and maximum age is different for both categories, the mean and median are roughly same. Hence, we decided to not include age as a predictor in our model. 
+When I summarized the given data, I found that the average value of Salary and Age variables in the given data are roughly 47519.64 USD and 35, respectively. I made a bar graph on our response variable i.e., tookLeave and found that 20% of the employees took a leave which is significantly high considering the short period length i.e., three months. In addition, the box plot of age categorized by tookLeave didn’t show any considerable difference between the two categories. Although the minimum and maximum age is different for both categories, the mean and median are roughly same. Hence, I decided to not include age as a predictor in our model. 
 
-Since our response variable is a qualitative variable and we had to classify whether each employee is likely to take a leave or not, we used Logistic Regression in this case. The model had tookLeave as dependent variable and salary, employmentStatus & raiseOrPromo as independent variables. We found that the model is useful as the ROC curve is always above the diagonal line (random guessing) and AUC value is 0.64 which is greater than 0.5. For the model validity, we used Hosmer and Lemeshow Goodness-of-Fit Test to test the null hypothesis that the logistic model built accurately describes the data at 5% significance level and found that the p-value is 0.7827 which is greater than 0.05. Hence, we fail to reject the null hypothesis i.e., there is no evidence that the model does not fit well. Moreover, we didn’t notice any pattern in Pearson Chi-Square Residuals vs Case Number plot. Thus, we can say that there is no dependence issue in this model. 
+#### Figure 1: Bar Graph - Frequency vs tookLeave
 
-Using Wald Chi-squared test, we revealed that Salary (0.0001 < 0.05) and RaiseorPromo (0.0047 < 0.05) are statistically significant whereas employment status (0.2515 > 0.05) does not significantly affect the likelihood of the response at 5% significance level. incorrectly predicted by the model to use the leave policy. For the model accuracy, we chose pprob cut-off of 0.22 which gives us both Specificity (64.2) and Sensitivity (55.3) greater than 50%. Besides this, client should keep in mind that response may be affected by the weather and season of that quarter. The tendency to take leave may have a seasonal pattern. Also, data was highly imbalanced which could give us a false sense of accuracy. Finally, additional features such as Married or not and Reason for leave may have added more to the analysis.
+![Figure 1](https://user-images.githubusercontent.com/37155988/93723232-00b29f00-fb6b-11ea-9aac-74ce74cf031b.png)
 
-#### Table 2: Model Summary
+#### Figure 3: Box Plot - tookLeave vs Age
 
-![Table 2](https://user-images.githubusercontent.com/37155988/93033721-72d43280-f605-11ea-82fb-14ebf54fd502.png)
+![Figure 3](https://user-images.githubusercontent.com/37155988/93723235-014b3580-fb6b-11ea-97f0-35fe3428e0c2.png)
+
+#### Figure 4: Box Plot - tookLeave vs Salary
+
+![Figure 4](https://user-images.githubusercontent.com/37155988/93723237-014b3580-fb6b-11ea-8f62-1deca3922152.png)
+
+#### Table 1 & 2: Numerical Summary of Salary
+
+![Table 1 and 2](https://user-images.githubusercontent.com/37155988/93723239-01e3cc00-fb6b-11ea-804a-8cc1ee0524e7.png)
+
+#### Table 3 & 4: Numerical Summary of Age
+
+![Table 3 and 4](https://user-images.githubusercontent.com/37155988/93723240-01e3cc00-fb6b-11ea-9485-de7e29c847c2.png)
+
+Since our response variable is a qualitative variable and I had to classify whether each employee is likely to take a leave or not, I used Logistic Regression in this case. The model had tookLeave as dependent variable and salary, employmentStatus & raiseOrPromo as independent variables. I found that the model is useful as the ROC curve is always above the diagonal line (random guessing) and AUC value is 0.64 which is greater than 0.5. For the model validity, I used Hosmer and Lemeshow Goodness-of-Fit Test to test the null hypothesis that the logistic model built accurately describes the data at 5% significance level and found that the p-value is 0.7827 which is greater than 0.05. Hence, I fail to reject the null hypothesis i.e., there is no evidence that the model does not fit well. Moreover, I didn’t notice any pattern in Pearson Chi-Square Residuals vs Case Number plot. Thus, I can say that there is no dependence issue in this model. 
+
+#### Figure 2: ROC Curve - Sensitivity vs Specificity
+
+![Figure 2](https://user-images.githubusercontent.com/37155988/93723234-014b3580-fb6b-11ea-80d8-76e169173833.png)
+
+#### Table 8: Hosmer and Lemeshow Goodness-of-Fit test
+
+![Table 8](https://user-images.githubusercontent.com/37155988/93723243-01e3cc00-fb6b-11ea-9315-e403735813da.png)
+
+#### Figure 5: Pearson Chi-Square Residual vs Case Number Model and Outlier Diagnostics 
+
+![Figure 5](https://user-images.githubusercontent.com/37155988/93723238-014b3580-fb6b-11ea-9ea0-08c12878d6ac.png)
+
+#### Table 5 & 6: Analysis of Effects and Analysis of Maximum Likelihood Estimation
+
+![Table 5 and 6](https://user-images.githubusercontent.com/37155988/93723241-01e3cc00-fb6b-11ea-9c4e-dd9cb58a6a35.png)
+
+#### Table 7: Classification Table
+
+![Table 7](https://user-images.githubusercontent.com/37155988/93723242-01e3cc00-fb6b-11ea-9183-16ee39a72b7b.png)
+
+Using Wald Chi-squared test, I revealed that Salary (0.0001 < 0.05) and RaiseorPromo (0.0047 < 0.05) are statistically significant whereas employment status (0.2515 > 0.05) does not significantly affect the likelihood of the response at 5% significance level. incorrectly predicted by the model to use the leave policy. For the model accuracy, I chose pprob cut-off of 0.22 which results in both Specificity (64.2) and Sensitivity (55.3) greater than 50%. 
